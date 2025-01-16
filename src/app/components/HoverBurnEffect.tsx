@@ -1,8 +1,10 @@
+// components/HoverBurnEffect.tsx
+
 'use client'; // This ensures this file is treated as a client component
 
 import React, { useState, useEffect } from 'react';
 
-const Hero = () => {
+const HoverBurnEffect = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isClient, setIsClient] = useState(false);
 
@@ -22,11 +24,11 @@ const Hero = () => {
   };
 
   return (
-    <div 
-      className="min-h-screen relative overflow-hidden background-color: black" // Removed bg-black class
+    <div
+      className="min-h-screen bg-white relative overflow-hidden"
       onMouseMove={handleMouseMove}
       style={{
-        background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgb(155, 11, 11) .5%, rgba(109, 39, 39, 0.5) 5%, rgba(255, 0, 0, 0) 30%)`, // Apply the gradient with black center
+        background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(77, 65, 65, 0.5) 0%, rgba(255, 255, 255, 0) 10%)`,
         transition: 'background 0.3s ease-out',
       }}
     >
@@ -35,4 +37,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HoverBurnEffect;

@@ -1,14 +1,12 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+// tailwind.config.ts
+
+module.exports = {
+  content: [
+    './src/app/**/*.{js,ts,jsx,tsx}',  // Ensures Tailwind scans all app files
+    './src/app/components/**/*.{js,ts,jsx,tsx}',  // Ensures components are scanned
+  ],
   theme: {
-    extend: {
-      width: {
-        '37%': '37%', // Custom width
-      },
-      borderRadius: {
-        '25px': '25px', // Optional custom radius if needed elsewhere
-      },
-    },
+    extend: {},
   },
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  plugins: [],
 };

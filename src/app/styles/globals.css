@@ -1,3 +1,8 @@
+/* globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Any other global styles you want to add */
+/* Add this in your globals.css or component-specific CSS file */
