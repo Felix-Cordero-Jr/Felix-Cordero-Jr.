@@ -5,7 +5,7 @@ type TimeDisplayProps = {
   locale?: string;
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'en-GB' }) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'GMT' }) => {
   const [currentTime, setCurrentTime] = useState<string>('Loading...');
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'en-GB' })
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
-          hour12: false,
+          hour12: true,
         };
         setCurrentTime(new Intl.DateTimeFormat(locale, options).format(now));
       } catch (error) {

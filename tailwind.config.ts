@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/app/**/*.{js,ts,jsx,tsx}'], // Adjust to your project structure
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '37%': '37%', // Custom width
+      },
+      borderRadius: {
+        '25px': '25px', // Optional custom radius if needed elsewhere
+      },
+    },
   },
-  plugins: [],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
 };
