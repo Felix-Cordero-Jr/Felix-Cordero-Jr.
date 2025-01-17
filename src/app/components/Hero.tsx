@@ -26,7 +26,7 @@ const Hero = () => {
       className="min-h-screen relative overflow-hidden background-color: black" // Removed bg-black class
       onMouseMove={handleMouseMove}
       style={{
-        background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgb(155, 11, 11) .5%, rgba(109, 39, 39, 0.5) 5%, rgba(255, 0, 0, 0) 30%)`, // Apply the gradient with black center
+        background: `bg-black radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgb(155, 11, 11) .5%, rgba(109, 39, 39, 0.5) 5%, rgba(255, 0, 0, 0) 30%)`, // Apply the gradient with black center
         transition: 'background 0.3s ease-out',
       }}
     >
