@@ -1,36 +1,20 @@
-// layout.tsx
-
-'use client'; // This ensures the layout component is client-side only
-
-import React from 'react';
-import './styles/globals.css'; // Correct path to globals.css
+import './styles/globals.css';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
+export const metadata = {
+  title: 'Next.js Portfolio 2025',
+  description: 'A modern portfolio built with Next.js and Tailwind CSS.',
+};
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en"> {/* Root HTML tag */}
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Your Portfolio</title>
-        {/* Other head elements */}
-      </head>
+    <html lang="en">
       <body>
-        <header>
-          <Header />
-          {/* Your header content */}
-        </header>
-        <main>
-          
-          {children} {/* Render children (page content) */}
-        </main>
-        <footer>
-          {/* Your footer content */}
-        </footer>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
-};
-
-export default Layout;
+}
