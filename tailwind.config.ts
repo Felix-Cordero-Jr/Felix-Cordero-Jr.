@@ -1,12 +1,12 @@
-// tailwind.config.ts
-
-module.exports = {
-  content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',  // Ensures Tailwind scans all app files
-    './src/app/components/**/*.{js,ts,jsx,tsx}',  // Ensures components are scanned
-  ],
+/** @type {import('tailwindcss').Config} */
+export default {
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        // You don't need to define `[25px]` here, as Tailwind already supports arbitrary values
+        '25px': '25px',
+      },
+    },
   },
-  plugins: [],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'], // Include your file paths
 };

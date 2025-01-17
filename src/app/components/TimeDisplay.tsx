@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 type TimeDisplayProps = {
   timeZone: string;
   locale?: string;
+  cityName: string;  // Added prop for the city name
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'GMT' }) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'GMT', cityName }) => {
   const [currentTime, setCurrentTime] = useState<string>('Loading...');
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'GMT' }) =
     return () => clearInterval(intervalId);
   }, [timeZone, locale]);
 
-  return <span>{currentTime}</span>;
+  return <span>{cityName} | {currentTime}</span>;
 };
 
 export default TimeDisplay;

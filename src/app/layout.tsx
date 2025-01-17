@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export const metadata = {
-  title: 'Next.js Portfolio 2025',
+  title: 'Next.js Portfolio',
   description: 'A modern portfolio built with Next.js and Tailwind CSS.',
 };
 
