@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white bg-opacity-20 shadow-md fixed top-0 left-0 w-full z-50 rounded-[25px]">
+    <nav className="bg-white bg-opacity-80 shadow-md fixed top-0 left-0 w-full z-50 rounded-[25px]">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16">
         {/* Logo */}
         <div className="text-xl font-bold text-white">Felix Cordero Jr.</div>
