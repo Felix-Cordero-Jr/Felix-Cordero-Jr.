@@ -1,9 +1,11 @@
+// src/app/page.tsx
 import Hero from './components/Hero';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
       <Hero />
@@ -12,4 +14,6 @@ export default function Home() {
       <Contact />
     </div>
   );
-}
+};
+
+export default Home;

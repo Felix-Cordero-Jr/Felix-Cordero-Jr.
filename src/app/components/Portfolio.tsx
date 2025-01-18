@@ -1,20 +1,21 @@
-const Portfolio: React.FC = () => {
-  const projects = [
-    { title: 'Project 1', image: '/assets/file.svg' },
-    { title: 'Project 2', image: '/assets/globe.svg' },
-    { title: 'Project 3', image: '/assets/vercel.svg' },
-  ];
-
+// src/app/components/Portfolio.tsx
+const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-20 bg-white text-center">
-      <h2 className="text-4xl font-bold mb-8">My Portfolio</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <div key={index} className="bg-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-            <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-            <h3 className="text-xl font-semibold p-4">{project.title}</h3>
-          </div>
-        ))}
+    <section id="portfolio" className="py-12">
+      <h2 className="text-3xl font-semibold text-center">My Portfolio</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
+        <div className="border p-6 shadow-lg rounded-md">
+          <h3 className="text-xl font-bold">Project 1</h3>
+          <p className="mt-4">Description of Project 1</p>
+        </div>
+        <div className="border p-6 shadow-lg rounded-md">
+          <h3 className="text-xl font-bold">Project 2</h3>
+          <p className="mt-4">Description of Project 2</p>
+        </div>
+        <div className="border p-6 shadow-lg rounded-md">
+          <h3 className="text-xl font-bold">Project 3</h3>
+          <p className="mt-4">Description of Project 3</p>
+        </div>
       </div>
     </section>
   );

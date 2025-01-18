@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "^10.x.x",
-    "next": "13.x.x",
+    "next": "^15.1.5",
     "postcss": "^8.x.x",
     "react": "18.x.x",
     "react-dom": "18.x.x",
@@ -14,7 +14,7 @@
     "@types/node": "22.10.7",
     "@types/react": "19.0.7",
     "tsconfig-paths": "^3.x.x",
-    "typescript": "^4.x.x"
+    "typescript": "^5.7.3"
   },
   "scripts": {
     "dev": "next dev",

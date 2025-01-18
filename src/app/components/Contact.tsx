@@ -1,28 +1,43 @@
-const Contact: React.FC = () => {
+// src/app/components/Contact.tsx
+import React from 'react'; // Ensure React is in scope
+// src/app/layout.tsx
+import '../styles/globals.css'; // Correct the import path to go up one level
+
+
+const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-gray-100 text-center">
-      <h2 className="text-4xl font-bold mb-4">Contact Me</h2>
-      <form className="max-w-md mx-auto space-y-4">
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-        />
-        <textarea
-          placeholder="Your Message"
-          className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-        />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition"
-        >
-          Send
-        </button>
+    <section id="contact" className="py-12 bg-gray-200">
+      <h2 className="text-3xl font-semibold text-center">Contact Me</h2>
+      <form className="max-w-lg mx-auto mt-8 space-y-4">
+        <div>
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full p-3 border rounded-md"
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full p-3 border rounded-md"
+          />
+        </div>
+        <div>
+          <textarea
+            placeholder="Your Message"
+            className="w-full p-3 border rounded-md"
+            rows="4"
+          ></textarea>
+        </div>
+        <div>
+          <button
+            type="submit"
+            className="w-full p-3 bg-blue-500 text-white rounded-md"
+          >
+            Send
+          </button>
+        </div>
       </form>
     </section>
   );
