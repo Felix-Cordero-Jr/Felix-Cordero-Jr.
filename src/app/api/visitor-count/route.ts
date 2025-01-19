@@ -1,20 +1,11 @@
 // src/app/api/visitor-count/route.ts
 
+let visitorCount = 0;  // This is an in-memory store, which will reset when the server restarts.
+
 export async function GET() {
-    if (typeof window === 'undefined') {
-      // Make sure the code only runs on the client side
-      return new Response(JSON.stringify({ count: 0 }), {
-        status: 500,
-      });
-    }
-  
-    let count = parseInt(localStorage.getItem('visitorCount') || '0', 10);
-    count++;
-    localStorage.setItem('visitorCount', count.toString());
-  
-    return new Response(JSON.stringify({ count }), {
-      status: 200,
-    });
-  }
-  
-  
+  visitorCount++;  // Increment the count on each visit.
+
+  return new Response(JSON.stringify({ count: visitorCount }), {
+    status: 200,
+  });
+}
