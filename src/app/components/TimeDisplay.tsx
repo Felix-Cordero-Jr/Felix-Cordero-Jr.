@@ -14,7 +14,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'GMT', cit
       try {
         const now = new Date();
         const options: Intl.DateTimeFormatOptions = {
-          timeZone,
+          timeZone: 'Asia/Manila',
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',

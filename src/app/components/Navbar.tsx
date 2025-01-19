@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-black shadow-lg shadow-gray-500/70 shadow-md fixed top-7 left-50% z-50 rounded-[25px] text-white border-2 border-gray-700 flex items-center justify-center h-16  w-[90%] sm:w-[80%] lg:w-[45%]">
+    <nav className="bg-black shadow-lg shadow-gray-500/70 shadow-md fixed top-1 left-50% z-50 rounded-[25px] text-white border-2 border-gray-700 flex items-center justify-center h-16  w-[90%] sm:w-[90%] lg:w-[45%]">
       <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo and Subtext */}
         <div className="flex flex-col items-center text-center py-[5px] max-w-full pr-[25px]">
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Time Display */}
-        <div className="hidden md:block text-xs md:text-sm text-gray-400">
+        <div className="hidden md:block text-xs md:text-sm text-gray-400 pl-[25px]">
           <TimeDisplay timeZone="Asia/Manila" cityName="Taguig City" />
         </div>
       </div>
