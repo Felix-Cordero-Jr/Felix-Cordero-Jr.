@@ -34,7 +34,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = 'GMT', cit
 
   return (
     <span className="text-white">
-      {cityName} | {currentTime})
+      {cityName} | {currentTime}
     </span>
   );
 };

@@ -7,12 +7,16 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-black shadow-md fixed top-0 left-0 w-full z-50 rounded-[25px] text-white">
+    <nav className="bg-black shadow-lg shadow-gray-500/70 shadow-md fixed top-7 left-50% z-50 rounded-[25px] text-white border-2 border-gray-700 flex items-center justify-center h-16  w-[90%] sm:w-[80%] lg:w-[45%]">
       <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo and Subtext */}
-        <div className="flex flex-col items-center text-center">
-          <div className="text-xl font-bold">Felix Cordero Jr.</div>
-          <div className="text-sm text-gray-400 mt-1">Full Stack Developer</div>
+        <div className="flex flex-col items-center text-center py-[5px] max-w-full pr-[25px]">
+          <div className="text-lg md:text-xl font-bold whitespace-nowrap overflow-hidden overflow-ellipsis">
+            Felix Cordero Jr.
+          </div>
+          <div className="text-xs md:text-sm text-gray-400 -mt-2 whitespace-nowrap">
+            Full Stack Developer
+          </div>
         </div>
 
         {/* Hamburger Menu Button */}
@@ -45,7 +49,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Time Display */}
-        <div className="hidden md:block text-sm text-gray-400">
+        <div className="hidden md:block text-xs md:text-sm text-gray-400">
           <TimeDisplay timeZone="Asia/Manila" cityName="Taguig City" />
         </div>
       </div>
