@@ -50,10 +50,10 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Time Display */}
-        <div className="hidden md:block text-xs md:text-sm text-gray-400 pl-[25px]">
+        <div className="hidden md:block text-xs md:text-sm text-gray-400 pl-[5px]">
           <TimeDisplay timeZone="Asia/Manila" cityName="Taguig City" />
         </div>
-        <div className="visitor-count text-xs">
+        <div className="visitor-count text-xs hidden md:block text-xs md:text-sm whitespace-nowrap">
       <VisitorCount />
       </div>
       </div>
