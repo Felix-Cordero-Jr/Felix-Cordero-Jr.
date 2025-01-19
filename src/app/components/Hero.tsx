@@ -1,6 +1,7 @@
 // src/app/components/Hero.tsx
 "use client";
 
+
 const Hero = () => {
   return (
     <section className="flex items-center justify-center h-screen bg-black text-white">

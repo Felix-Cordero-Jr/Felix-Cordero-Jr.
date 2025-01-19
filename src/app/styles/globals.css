@@ -7,3 +7,13 @@
 body {
   font-family: 'Arial', sans-serif;
 }
+
+/* src/styles/globals.css or src/app/components/VisitorCount.module.css */
+.visitor-count {
+  background-color: #f0f0f038;
+  padding: 7px;
+  border-radius: 25px;
+  text-align: center;
+  margin-left: 7px;
+  
+}
