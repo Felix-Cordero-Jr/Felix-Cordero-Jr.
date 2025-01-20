@@ -32,6 +32,14 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (section: string) => {
+    const element = document.getElementById(section);
+    if (element) {
+      // Scroll to the target section with a smooth transition
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="bg-black shadow-lg shadow-gray-500/70 shadow-md fixed top-1 left-1/2 transform -translate-x-1/2 z-50 rounded-[25px] text-white border-2 border-gray-700 flex items-center justify-between h-16 w-[90%] md:w-[95%] lg:w-[auto] px-4">
       <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto ">
@@ -62,6 +70,7 @@ const Navbar: React.FC = () => {
         >
           <a
             href="#home"
+            onClick={() => scrollToSection('home')}
             className={`block px-4 py-2 md:inline-block ${
               activeSection === 'home' ? 'text-red-500' : 'hover:text-red-500'
             }`}
@@ -70,6 +79,7 @@ const Navbar: React.FC = () => {
           </a>
           <a
             href="#about"
+            onClick={() => scrollToSection('about')}
             className={`block px-4 py-2 md:inline-block ${
               activeSection === 'about' ? 'text-red-500' : 'hover:text-red-500'
             }`}
@@ -78,6 +88,7 @@ const Navbar: React.FC = () => {
           </a>
           <a
             href="#portfolio"
+            onClick={() => scrollToSection('portfolio')}
             className={`block px-4 py-2 md:inline-block ${
               activeSection === 'portfolio' ? 'text-red-500' : 'hover:text-red-500'
             }`}
@@ -86,6 +97,7 @@ const Navbar: React.FC = () => {
           </a>
           <a
             href="#contact"
+            onClick={() => scrollToSection('contact')}
             className={`block px-4 py-2 md:inline-block ${
               activeSection === 'contact' ? 'text-red-500' : 'hover:text-red-500'
             }`}
