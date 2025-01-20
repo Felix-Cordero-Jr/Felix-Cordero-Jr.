@@ -1,11 +1,20 @@
-// src/app/api/visitor-count/route.ts
+import { NextRequest } from 'next/server';
+const { getVisitorCount, incrementVisitorCount } = require('./storage');
 
-let visitorCount = 0;  // This is an in-memory store, which will reset when the server restarts.
+export async function GET(request: NextRequest) {
+  const cookie = request.headers.get('cookie');
+  const hasVisited = cookie && cookie.includes('visited=true');
 
-export async function GET() {
-  visitorCount++;  // Increment the count on each visit.
+  if (!hasVisited) {
+    incrementVisitorCount();  // Increment the count using the storage function.
+    const response = new Response(JSON.stringify({ count: getVisitorCount() }), {
+      status: 200,
+    });
+    response.headers.append('Set-Cookie', 'visited=true; HttpOnly; Path=/; Max-Age=3600'); // Set cookie for 1 hour
+    return response;
+  }
 
-  return new Response(JSON.stringify({ count: visitorCount }), {
+  return new Response(JSON.stringify({ count: getVisitorCount() }), {
     status: 200,
   });
 }

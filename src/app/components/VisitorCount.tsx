@@ -18,7 +18,11 @@ const VisitorCount = () => {
       }
     };
 
-    fetchVisitorCount();
+    fetchVisitorCount(); // Initial fetch
+
+    const intervalId = setInterval(fetchVisitorCount, 5000); // Poll every 5 seconds
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
 
   return (

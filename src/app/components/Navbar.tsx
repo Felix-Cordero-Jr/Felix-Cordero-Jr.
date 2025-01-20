@@ -33,10 +33,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className="bg-black shadow-lg shadow-gray-500/70 shadow-md fixed top-1 left-50% z-50 rounded-[25px] text-white border-2 border-gray-700 flex items-center justify-center h-16 w-[90%] sm:w-[90%] lg:w-[50%]">
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-black shadow-lg shadow-gray-500/70 shadow-md fixed top-1 left-1/2 transform -translate-x-1/2 z-50 rounded-[25px] text-white border-2 border-gray-700 flex items-center justify-between h-16 w-[90%] md:w-[95%] lg:w-[auto] px-4">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto ">
         {/* Logo and Subtext */}
-        <div className="flex flex-col items-center text-center py-[5px] max-w-full pr-[25px]">
+        <div className="flex flex-col items-center text-center py-[5px] max-w-full">
           <div className="text-lg md:text-xl font-bold whitespace-nowrap overflow-hidden overflow-ellipsis">
             Felix Cordero Jr.
           </div>
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
         <div
           className={`${
             isMenuOpen ? 'block' : 'hidden'
-          } absolute top-16 left-0 w-full bg-black md:static md:flex md:w-auto md:space-x-4`}
+          } relative w-full bg-black md:static md:flex md:w-auto md:space-x-4`}
         >
           <a
             href="#home"
@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
         <div className="hidden md:block text-xs md:text-sm text-gray-400 pl-[5px] whitespace-nowrap">
           <TimeDisplay timeZone="Asia/Manila" cityName="Taguig City" />
         </div>
-        <div className="visitor-count text-xs hidden md:block text-xs md:text-sm whitespace-nowrap">
+        <div className="visitor-count text-xs hidden md:block text-xs md:text-sm whitespace-nowrap ">
           <VisitorCount />
         </div>
       </div>
