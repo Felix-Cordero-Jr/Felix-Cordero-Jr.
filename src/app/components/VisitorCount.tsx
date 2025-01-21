@@ -1,25 +1,43 @@
-'use client';  // Mark as client-side component
+// src/app/components/VisitorCount.tsx
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const VisitorCount = () => {
-  const [visitorCount, setVisitorCount] = useState(0);
+    const [visitorCount, setVisitorCount] = useState<number>(0);
 
-  useEffect(() => {
+    // This function fetches the visitor data from the API
     const fetchVisitorData = async () => {
-      const response = await fetch('/api/visitor-count');
-      const data = await response.json();
-      setVisitorCount(data.count);
+        try {
+            const response = await fetch('/api/visitor-count', {
+                method: 'GET',
+            });
+
+            // Ensure the response is successful
+            if (!response.ok) {
+                const errorDetails = await response.text();
+                throw new Error(`Failed to fetch data: ${response.statusText} - ${errorDetails}`);
+            }
+
+            const text = await response.text();  // Get the response body as text
+            const data = text ? JSON.parse(text) : { count: 0 };
+
+            // Update the state with the new visitor count
+            setVisitorCount(data.count);
+        } catch (error) {
+            console.error('Error fetching visitor count:', error);
+        }
     };
 
-    fetchVisitorData();
-  }, []);
+    // Fetch visitor data on component mount
+    useEffect(() => {
+        fetchVisitorData();
+    }, []);
 
-  return (
-    <div>
-      <h1>Visitor Count: {visitorCount}</h1>
-    </div>
-  );
+    return (
+        <div>
+            <h1>Visitor Count: {visitorCount}</h1>
+        </div>
+    );
 };
 
 export default VisitorCount;

@@ -1,23 +1,35 @@
-const fs = require('fs');
+const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const filePath = path.join(__dirname, 'count.json');
+const dbPath = path.join(__dirname, 'visitor_count.db');
+const db = new sqlite3.Database(dbPath);
 
-// Initialize the count file if it doesn't exist
-if (!fs.existsSync(filePath)) {
-  fs.writeFileSync(filePath, JSON.stringify({ count: 0 }));
-}
-
+// Function to get the visitor count
 const getVisitorCount = () => {
-  const data = fs.readFileSync(filePath);
-  return JSON.parse(data).count;
+  return new Promise((resolve, reject) => {
+    db.get('SELECT count FROM visitor_count', (err, row) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(row ? row.count : 0);
+      }
+    });
+  });
 };
 
+// Function to increment the visitor count
 const incrementVisitorCount = () => {
-  const currentCount = getVisitorCount();
-  const newCount = currentCount + 1;
-  fs.writeFileSync(filePath, JSON.stringify({ count: newCount }));
-  return newCount;
+  return new Promise((resolve, reject) => {
+    console.log('Incrementing visitor count...');
+    db.run('UPDATE visitor_count SET count = count + 1', function(err) {
+      if (err) {
+        reject(err);
+      } else {
+        console.log('Visitor count incremented successfully.');
+        resolve(this.changes);
+      }
+    });
+  });
 };
 
 module.exports = { getVisitorCount, incrementVisitorCount };
