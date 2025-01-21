@@ -5,7 +5,7 @@ const filePath = path.join(__dirname, 'count.json');
 
 // Initialize the count file if it doesn't exist
 if (!fs.existsSync(filePath)) {
-  fs.writeFileSync(filePath, JSON.stringify({ count: 0, lastVisit: null }));
+  fs.writeFileSync(filePath, JSON.stringify({ count: null, lastVisit: null }));
 }
 
 const getVisitorCount = () => {
