@@ -5,18 +5,20 @@ const filePath = path.join(__dirname, 'count.json');
 
 // Initialize the count file if it doesn't exist
 if (!fs.existsSync(filePath)) {
-  fs.writeFileSync(filePath, JSON.stringify({ count: 0 }));
+  fs.writeFileSync(filePath, JSON.stringify({ count: 0, lastVisit: null }));
 }
 
 const getVisitorCount = () => {
   const data = fs.readFileSync(filePath);
-  return JSON.parse(data).count;
+  const { count, lastVisit } = JSON.parse(data);
+  return { count, lastVisit };
 };
 
 const incrementVisitorCount = () => {
-  const currentCount = getVisitorCount();
-  const newCount = currentCount + 1;
-  fs.writeFileSync(filePath, JSON.stringify({ count: newCount }));
+  const currentData = getVisitorCount();
+  const newCount = currentData.count + 1;
+  const newLastVisit = new Date().toISOString(); // Set last visit to current time
+  fs.writeFileSync(filePath, JSON.stringify({ count: newCount, lastVisit: newLastVisit }));
   return newCount;
 };
 
