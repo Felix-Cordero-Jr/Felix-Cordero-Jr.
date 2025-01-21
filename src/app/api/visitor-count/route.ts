@@ -1,15 +1,21 @@
 // src/app/api/visitor-count/route.ts
 
-let visitorCount = 0;  // In-memory store for demonstration, will reset on server restart
+import { getVisitorCount, incrementVisitorCount } from './storage';
+
+let visitorCount = getVisitorCount().count;  // Initialize from storage
+
 
 export async function GET() {
   try {
     // Increment visitor count
-    visitorCount++;
+    const newCount = incrementVisitorCount(); // Increment and update last visit
+    const lastVisit = getVisitorCount().lastVisit; // Get last visit timestamp
+
 
     // Return the updated visitor count as a JSON response
     return new Response(
-      JSON.stringify({ count: visitorCount }),
+      JSON.stringify({ count: newCount, lastVisit }),
+
       {
         status: 200,
         headers: {
