@@ -2,20 +2,14 @@
 
 import { getVisitorCount, incrementVisitorCount } from './storage';
 
-let visitorCount = getVisitorCount().count;  // Initialize from storage
-
-
 export async function GET() {
   try {
     // Increment visitor count
-    const newCount = incrementVisitorCount(); // Increment and update last visit
-    const lastVisit = getVisitorCount().lastVisit; // Get last visit timestamp
-
+    const newCount = incrementVisitorCount();
 
     // Return the updated visitor count as a JSON response
     return new Response(
-      JSON.stringify({ count: newCount, lastVisit }),
-
+      JSON.stringify({ count: newCount }),
       {
         status: 200,
         headers: {
