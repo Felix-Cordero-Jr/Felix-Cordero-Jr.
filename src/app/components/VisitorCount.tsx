@@ -34,7 +34,7 @@ const VisitorCount = () => {
 
   return (
     <div className="visitor-count">
-      <p className="text-xl font-semibold">Visitor Count: {visitorCount}</p>
+      <p className="text-xs font-semibold">Visitor Count: {visitorCount}</p>
     </div>
   );
 };
