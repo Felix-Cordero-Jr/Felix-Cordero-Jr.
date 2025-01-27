@@ -66,12 +66,12 @@ const Navbar: React.FC = () => {
         <div
           className={`${
             isMenuOpen ? 'block' : 'hidden'
-          } relative w-full bg-black md:static md:flex md:w-auto md:space-x-4`}
+          } absolute top-16 bg-black w-full md:static md:flex md:w-auto md:space-x-4 z-50 mt-4`}
         >
           <a
             href="#home"
             onClick={() => scrollToSection('home')}
-            className={`block px-4 py-2 md:inline-block ${
+            className={`block px-4 py-2 md:inline-block${
               activeSection === 'home' ? 'text-red-500' : 'hover:text-red-500'
             }`}
           >

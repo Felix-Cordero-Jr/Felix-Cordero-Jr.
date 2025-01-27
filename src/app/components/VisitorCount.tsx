@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const VisitorCount = () => {
-    const [visitorCount, setVisitorCount] = useState<number>(0);
+    const [visitorCount, setVisitorCount] = useState<number>(777);
 
     // Increment the visitor count each time the component is rendered
     useEffect(() => {
