@@ -5,6 +5,7 @@
   "dependencies": {
     "autoprefixer": "^10.x.x",
     "next": "^15.1.5",
+    "pg": "^8.13.1",
     "postcss": "^8.x.x",
     "react": "18.x.x",
     "react-dom": "18.x.x",
